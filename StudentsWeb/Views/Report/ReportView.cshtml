@@ -1,0 +1,40 @@
+﻿@model List<StudentsWeb.Models.Student>
+@{
+    ViewBag.Title = "Student Report";
+}
+<h2>Student Report</h2>
+<style>
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    th, td {
+        padding: 10px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+    }
+
+    th {
+        background-color: #f2f2f2;
+    }
+</style>
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Birth Date</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var student in Model)
+         {
+           <tr>
+           <td> @student.Id </td>
+           <td> @student.Name </td>
+           <td> @student.BirthDate.ToShortDateString() </td>
+           </tr>
+         }
+    </tbody>
+</table>

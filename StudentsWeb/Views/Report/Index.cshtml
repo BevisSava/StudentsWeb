@@ -1,0 +1,90 @@
+﻿@{
+    ViewBag.Title = "Student Report";
+}
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-5">
+            <div class="card shadow-lg border-0 custom-card">
+                <div class="card-header text-center py-4">
+                    <h4 class="mb-0 text-uppercase fw-bold text-dark">Tra cứu sinh viên</h4>
+                    <div class="header-line"></div>
+                </div>
+
+                <div class="card-body p-5">
+                    <form method="post" action="/Report/GenerateReport">
+                        <div class="mb-4">
+                            <label for="fromDate" class="form-label fw-bold">Từ ngày:</label>
+                            <input type="date" id="fromDate" name="fromDate" class="form-control custom-input" required />
+                        </div>
+
+                        <div class="mb-5">
+                            <label for="toDate" class="form-label fw-bold">Đến ngày:</label>
+                            <input type="date" id="toDate" name="toDate" class="form-control custom-input" required />
+                        </div>
+
+                        <button type="submit" class="btn btn-lemon w-100 fw-bold py-3 shadow-sm">
+                            XEM BÁO CÁO
+                        </button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    /* Tổng thể nền trang xám cực nhẹ để làm nổi bật card */
+    body {
+        background-color: lightgoldenrodyellow;
+    }
+
+    /* Tùy chỉnh Card */
+    .custom-card {
+        border-radius: 20px;
+        /* Viền vàng chanh cực nhẹ */
+        border-top: 5px solid #f9f1a5 !important;
+    }
+
+    /* Đường kẻ trang trí dưới tiêu đề */
+    .header-line {
+        width: 50px;
+        height: 3px;
+        background-color: #f9f1a5;
+        margin: 10px auto 0;
+        border-radius: 2px;
+    }
+
+    /* Ô nhập liệu */
+    .custom-input {
+        border-radius: 10px;
+        border: 1px solid #eee;
+        padding: 12px;
+        transition: all 0.3s;
+    }
+
+        .custom-input:focus {
+            border-color: #f9f1a5;
+            box-shadow: 0 0 0 0.25rem rgba(249, 241, 165, 0.25);
+            outline: none;
+        }
+
+    /* Nút bấm màu vàng chanh chuyên nghiệp */
+    .btn-lemon {
+        background-color: #f9f1a5;
+        color: #555;
+        border: none;
+        border-radius: 10px;
+        letter-spacing: 1px;
+        transition: all 0.3s ease;
+    }
+
+        .btn-lemon:hover {
+            background-color: #f4e869; /* Vàng đậm hơn chút khi hover */
+            color: #000;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(244, 232, 105, 0.4);
+        }
+
+    .btn
